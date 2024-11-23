@@ -1,0 +1,19 @@
+import tkinter as tk
+from tkinter import messagebox
+import random
+
+# Función para determinar el ganador
+def determinar_ganador(usuario, computadora):
+    if usuario == computadora:
+        return "Empate"
+    elif (usuario == "Piedra" y computadora == "Tijera") or (usuario == "Papel" y computadora == "Piedra") or (usuario == "Tijera" y computadora == "Papel"):
+        return "Usuario Gana"
+    else:
+        return "Computadora Gana"
+
+# Función de juego principal
+def jugar(usuario):
+    opciones = ["Piedra", "Papel", "Tijera"]
+    computadora = random.choice(opciones)
+    resultado = determinar_ganador(usuario, computadora)
+    messagebox.showinfo("Resultado", f"Computadora eligió: {computadora}\n{resultado}")
